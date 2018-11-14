@@ -1,0 +1,12 @@
+/*****************************
+ All rights reserved.
+ AllFont.net (c) 2011-2015
+ *****************************/
+@font-face {
+    font-family: 'Star Jedi';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Star Jedi'), local('StarJedi-Regular'),
+        url(../fonts/star-jedi.woff) format('woff'),
+        url(../fonts/star-jedi.ttf) format('truetype');
+}

@@ -1,40 +1,30 @@
 [{
-   "name":"ww",
-   "color":"ww",
-   "progress":"ww"
+   "name":"MsSql",
+   "color":"#A1887F",
+   "progress":"0.80"
 },
 {
-   "name":"",
-   "color":"",
-   "progress":""
+   "name":"Html",
+   "color":"#F57F17",
+   "progress":"0.95"
 },
 {
-   "name":"",
-   "color":"",
-   "progress":""
+   "name":"Css",
+   "color":"#4A148C",
+   "progress":"0.90"
 },
 {
-   "name":"",
-   "color":"",
-   "progress":""
+   "name":"Javascript",
+   "color":"#D81B60",
+   "progress":"0.70"
 },
 {
-   "name":"",
-   "color":"",
-   "progress":""
+   "name":"jQuery",
+   "color":"#EF5350",
+   "progress":"0.60"
 },
 {
-   "name":"",
-   "color":"",
-   "progress":""
-},
-{
-   "name":"",
-   "color":"",
-   "progress":""
-},
-{
-   "name":"",
-   "color":"",
-   "progress":""
+   "name":"MySql",
+   "color":"#FFEA00",
+   "progress":"0.60"
 }]

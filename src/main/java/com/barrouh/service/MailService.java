@@ -29,7 +29,7 @@ public class MailService {
 
 	private String to = "mohamed.barrouh@gmail.com";
 
-	final static Logger LOGGER = LogManager.getLogger(MailService.class);
+	static final Logger LOGGER = LogManager.getLogger(MailService.class);
 
 	public void setMailServerProperties() {
 			emailProperties = System.getProperties();

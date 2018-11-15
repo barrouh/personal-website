@@ -18,14 +18,16 @@ public class StoryDao {
 
 private ObjectMapper mapper = new ObjectMapper();
 	
-	private String dataPath = "/Users/barrouh/Desktop/GitHub/BarrouhWebsite/src/main/data/Stories.json";
+	private String dataPath = "src/main/data/Stories.json";
 	
-	final static Logger LOGGER = LogManager.getLogger(StoryDao.class);
+	static final Logger LOGGER = LogManager.getLogger(StoryDao.class);
 	
 	public List<Story> getStories() {
-		List<Story> stories=new ArrayList<Story>();
+		List<Story> stories=new ArrayList<>();
 		try {
+			LOGGER.info("Trying to get Stories Data ...");
 			stories = mapper.readValue(new File(dataPath), new TypeReference<List<Story>>(){});
+			LOGGER.info("Stories Data Retrived successfully.");
 		} catch (JsonGenerationException e) {
 			LOGGER.error(e.getMessage(), e);
 		} catch (JsonMappingException e) {

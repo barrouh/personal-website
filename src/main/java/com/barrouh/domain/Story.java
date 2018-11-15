@@ -6,6 +6,8 @@ public class Story {
 	
 	private String date;
 	
+	private String image;
+	
 	private String discription;
 
 	public String getTitle() {
@@ -22,6 +24,14 @@ public class Story {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getDiscription() {

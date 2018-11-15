@@ -13,13 +13,11 @@ import com.barrouh.service.PersoneService;
 @Controller
 public class DefaultController {
 	
-	private PersoneService personeService;
-
-	final static Logger LOGGER = LogManager.getLogger(DefaultController.class);
+	static final Logger LOGGER = LogManager.getLogger(DefaultController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView homePage() {
-		   personeService = new PersoneService();
+		   PersoneService personeService = new PersoneService();
            ModelAndView model = new ModelAndView();
 		   model.setViewName("index");
 		   model.addObject("persone", personeService.getPerson());

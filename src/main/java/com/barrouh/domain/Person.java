@@ -14,6 +14,8 @@ public class Person {
 	
 	private String image;
 	
+	private String welcomeQuote;
+	
 	private List<Skill> skills;
 	
 	private List<Story> stories;
@@ -53,9 +55,17 @@ public class Person {
 	public String getImage() {
 		return image;
 	}
-
+	
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public String getWelcomeQuote() {
+		return welcomeQuote;
+	}
+
+	public void setWelcomeQuote(String welcomeQuote) {
+		this.welcomeQuote = welcomeQuote;
 	}
 
 	public List<Skill> getSkills() {

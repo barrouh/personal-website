@@ -16,16 +16,19 @@ import com.barrouh.domain.Skill;
 
 public class SkillDao {
 
-    private ObjectMapper mapper = new ObjectMapper();
-	
-	private String dataPath = "/Users/barrouh/Desktop/GitHub/BarrouhWebsite/src/main/data/Skills.json";
-	
-	final static Logger LOGGER = LogManager.getLogger(SkillDao.class);
-	
+	private ObjectMapper mapper = new ObjectMapper();
+
+	private String dataPath = "src/main/data/Skills.json";
+
+	static final Logger LOGGER = LogManager.getLogger(SkillDao.class);
+
 	public List<Skill> getSkills() {
-		List<Skill> skills=new ArrayList<Skill>();
+		List<Skill> skills = new ArrayList<>();
 		try {
-			skills = mapper.readValue(new File(dataPath), new TypeReference<List<Skill>>(){});
+			LOGGER.info("Trying to get Skills Data ...");
+			skills = mapper.readValue(new File(dataPath), new TypeReference<List<Skill>>() {
+			});
+			LOGGER.info("Skills Data Retrived successfully.");
 		} catch (JsonGenerationException e) {
 			LOGGER.error(e.getMessage(), e);
 		} catch (JsonMappingException e) {

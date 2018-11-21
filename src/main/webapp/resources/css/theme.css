@@ -502,34 +502,6 @@ section#contact .form-control:focus {
 	box-shadow: none
 }
 
-section#contact::-webkit-input-placeholder {
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	font-weight: 700;
-	color: #bbb
-}
-
-section#contact:-moz-placeholder {
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	font-weight: 700;
-	color: #bbb
-}
-
-section#contact::-moz-placeholder {
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	font-weight: 700;
-	color: #bbb
-}
-
-section#contact:-ms-input-placeholder {
-	font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform: uppercase;
-	font-weight: 700;
-	color: #bbb
-}
-
 section#contact .text-danger {
 	color: #e74c3c
 }

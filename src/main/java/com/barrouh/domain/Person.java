@@ -16,6 +16,14 @@ public class Person {
 	
 	private String welcomeQuote;
 	
+	private String facebookLink;
+	
+	private String githubLink;
+	
+	private String linkedinLink;
+	
+	private String instagramLink;
+	
 	private List<Skill> skills;
 	
 	private List<Story> stories;
@@ -66,6 +74,38 @@ public class Person {
 
 	public void setWelcomeQuote(String welcomeQuote) {
 		this.welcomeQuote = welcomeQuote;
+	}
+
+	public String getFacebookLink() {
+		return facebookLink;
+	}
+
+	public void setFacebookLink(String facebookLink) {
+		this.facebookLink = facebookLink;
+	}
+
+	public String getGithubLink() {
+		return githubLink;
+	}
+
+	public void setGithubLink(String githubLink) {
+		this.githubLink = githubLink;
+	}
+
+	public String getLinkedinLink() {
+		return linkedinLink;
+	}
+
+	public void setLinkedinLink(String linkedinLink) {
+		this.linkedinLink = linkedinLink;
+	}
+
+	public String getInstagramLink() {
+		return instagramLink;
+	}
+
+	public void setInstagramLink(String instagramLink) {
+		this.instagramLink = instagramLink;
 	}
 
 	public List<Skill> getSkills() {

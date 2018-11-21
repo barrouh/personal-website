@@ -10,10 +10,40 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<context:component-scan base-package="com.barrouh.web" />
-
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<context:component-scan base-package="com.barrouh" />
+	
+	<bean id="settings" class="com.barrouh.domain.Settings">
+     	<property name="mailHost" value="smtp.gmail.com" />
+     	<property name="mailPort" value="465" />
+     	<property name="mailTo" value="mohamed.barrouh@gmail.com" />
+     	<property name="mailFromUser" value="mohamed.barrouh" />
+     	<property name="mailFromUserPassword" value="test" />
+     	<property name="dataPath" value="data/" />
+	</bean>
+	
+	<bean id="personDao" class="com.barrouh.dao.PersonDao">
+	 <constructor-arg><ref bean="settings"/></constructor-arg>
+	</bean>
+	
+	<bean id="skillDao" class="com.barrouh.dao.SkillDao">
+	 <constructor-arg><ref bean="settings"/></constructor-arg>
+	</bean>
+	
+	<bean id="storyDao" class="com.barrouh.dao.StoryDao">
+	 <constructor-arg><ref bean="settings"/></constructor-arg>
+	</bean>
+	
+	<bean id="personeService" class="com.barrouh.service.PersoneService">
+	  <property name="personDao" ref="personDao" />
+	  <property name="skillDao"  ref="skillDao" />
+	  <property name="storyDao"  ref="storyDao" />
+	</bean>
+	
+	<bean id="mailService" class="com.barrouh.service.MailService">
+	 <constructor-arg><ref bean="settings"/></constructor-arg>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
 		</property>

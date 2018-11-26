@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
             <!DOCTYPE html>
             <html lang="en">
             <head>
@@ -103,11 +104,11 @@
                                     <c:forEach items="${persone.skills}" var="skill">
                                         <div class="col-md-4 col-sm-6 portfolio-item">
                                             <div class="portfolio-caption">
-                                                <h4>${skill.name}:80%</h4>
-                                                <div id="${skill.name}Id"></div>
+                                                <h4>${skill.name}: ${skill.progress * 100}%</h4>
+                                                <div id="${fn:replace(skill.name,' ','')}Id"></div>
                                                 <script>
-                                                    $('#${skill.name}Id').circleProgress({
-                                                        value: ${skill.progress},
+                                                    $('#${fn:replace(skill.name,' ','')}Id').circleProgress({
+                                                        value: '${skill.progress}',
                                                         size: 150,
                                                         fill: {
                                                             color: "${skill.color}"

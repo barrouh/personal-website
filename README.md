@@ -1,6 +1,6 @@
 # BarrouhWebsite
 My Personal website :
-http://www.barrouh.com/
+http://www.barrouh.com
 
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=barrouh_BarrouhWebsite&metric=alert_status)](https://sonarcloud.io/dashboard?id=barrouh_BarrouhWebsite) 
 

@@ -15,7 +15,7 @@
   -moz-animation: heartbeat .5s infinite linear;
   animation: heartbeat .5s infinite linear;
 }
-.heart-beat i{
+.heart-beat em{
 	 color: red;
 	 font-size:30px;
 }
@@ -726,117 +726,117 @@ ul.topnav li.icon {
     -webkit-animation: infinite-spinning 40s infinite linear;
     -moz-animation: infinite-spinning 40s infinite linear;
     -o-animation: infinite-spinning 40s infinite linear;
-    animation: infinite-spinning 40s infinite linear 
+    animation: infinite-spinning 40s infinite linear
 }
 @-webkit-keyframes infinite-spinning {
     from {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
     to {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
 }
 @-moz-keyframes infinite-spinning {
     from {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
     to {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
 }
 @-o-keyframes infinite-spinning {
     from {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
     to {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
         transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
 }
 @keyframes infinite-spinning {
     from {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
     to {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
 }
 @-webkit-keyframes infinite-spinning-alt {
     from {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
     to {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
 }
 @-moz-keyframes infinite-spinning-alt {
     from {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
     to {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
 }
 @-o-keyframes infinite-spinning-alt {
     from {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
     to {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
 }
 @keyframes infinite-spinning-alt {
     from {
-        moz-transform: rotate(360deg);
-        ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-        webkit-transform: rotate(360deg) 
+         transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg) 
    }
     to {
-        moz-transform: rotate(0);
-        ms-transform: rotate(0);
-        transform: rotate(0);
-        webkit-transform: rotate(0) 
+         transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -webkit-transform: rotate(0) 
    }
 }

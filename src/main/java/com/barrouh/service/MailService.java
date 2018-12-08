@@ -1,14 +1,21 @@
 package com.barrouh.service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.MessageFormat;
 import java.util.Properties;
 
+import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,6 +42,8 @@ public class MailService {
 
 	private String fromUserPassword;
 	
+	private String emailTemplatePath;
+	
 	static final Logger LOGGER = LogManager.getLogger(MailService.class);
 
 	public MailService(Settings settings) {
@@ -44,6 +53,7 @@ public class MailService {
 			this.to = settings.getMailTo();
 			this.fromUser = settings.getMailFromUser();
 			this.fromUserPassword = settings.getMailFromUserPassword(); 
+			this.emailTemplatePath=settings.getEmailTemplatePath();
 		} else {
 			LOGGER.error("MailService Settings is null or not valid .");
 			throw new NullPointerException();
@@ -75,9 +85,27 @@ public class MailService {
 			emailMessage.setFrom(new InternetAddress(contact.getEmail()));
 			emailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(contact.getEmail()));
 			emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-			emailMessage.setSubject(contact.getFullName());
-			emailMessage.setContent(contact.getMessage(), "text/html");
-		} catch (MessagingException e) {
+			emailMessage.setSubject("New Email received from : "+contact.getFullName());
+			
+	         MimeMultipart multipart = new MimeMultipart("related");
+			 String[] args = {contact.getFullName(),contact.getMessage()};
+	         BodyPart messageBodyPart = new MimeBodyPart();
+	         messageBodyPart.setContent(buildEmail(args), "text/html");
+	         multipart.addBodyPart(messageBodyPart);
+
+	        /*
+	         messageBodyPart = new MimeBodyPart();
+	         DataSource fds = new FileDataSource(emailTemplatePath+"github.png");
+
+	         messageBodyPart.setDataHandler(new DataHandler(fds));
+	         messageBodyPart.setHeader("Content-ID", "<github>");
+	   
+	         multipart.addBodyPart(messageBodyPart);
+	         */
+	         
+	         emailMessage.setContent(multipart);
+	        
+		} catch (MessagingException | IOException e) {
 			LOGGER.error(e.getMessage(), e);
 		} 
 	}
@@ -96,6 +124,18 @@ public class MailService {
 		} else {
 			LOGGER.warn("Contact object is null !!!");
 		}
+	}
+	
+	private String buildEmail(Object[] values) throws IOException {
+		String result = "";
+	    String msg = new String(Files.readAllBytes(Paths.get(emailTemplatePath+"Email.html")));
+
+		if (values != null && values.length > 0) {
+			result = MessageFormat.format(msg, values);
+		} else if (values == null) {
+			result = "";
+		}
+		return result;
 	}
 
 }

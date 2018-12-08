@@ -49,7 +49,7 @@ public class DefaultController {
 				contact.setMessage(message);
 				if (isValidContact(contact)) {
 					LOGGER.info("The user " + fullName + " Triying to Contact you.");
-					LOGGER.info("The user email is : " + email);
+					LOGGER.info("The user email is : " + email+" and user phone number is : " + phoneNumber);
 					try {
 						mailService.sendMail(contact);
 						return "success";	

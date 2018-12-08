@@ -15,6 +15,8 @@ public class Settings {
 	private String mailFromUserPassword;
 
 	private String dataPath;
+	
+	private String emailTemplatePath;
 
 	public String getMailHost() {
 		return mailHost;
@@ -62,6 +64,14 @@ public class Settings {
 
 	public void setDataPath(String dataPath) {
 		this.dataPath = dataPath;
+	}
+	
+	public String getEmailTemplatePath() {
+		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath()+emailTemplatePath;
+	}
+
+	public void setEmailTemplatePath(String emailTemplatePath) {
+		this.emailTemplatePath = emailTemplatePath;
 	}
 
 	public boolean isMailSettingsValid() {

@@ -279,6 +279,13 @@
             </div>
         </div>
         <!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130645093-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-130645093-1');
+		</script>
         <!-- JS -->
         <spring:url value="/resources/js/jquery.easing.min.js" var="easingJs" />
         <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />

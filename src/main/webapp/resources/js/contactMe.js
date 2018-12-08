@@ -35,7 +35,7 @@ $("#contactForm").submit(function( event ) {
             		 return;
             	 }
             }
-           
+            addloading();
             $.ajax({
                 url: "/Contact",
                 type: "POST",
@@ -91,6 +91,10 @@ function isNotnull(param) {
 function isValidEmailAddress(email) {
    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
    return pattern.test(email);
+}
+
+function addloading(){
+	 $('#success').html("<div class='lds-spinner'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>");
 }
 
 function createAlert(message,type){

@@ -16,9 +16,10 @@
      	<property name="mailHost" value="smtp.gmail.com" />
      	<property name="mailPort" value="465" />
      	<property name="mailTo" value="mohamed.barrouh@gmail.com" />
-     	<property name="mailFromUser" value="mohamed.barrouh" />
+     	<property name="mailFromUser" value="smtp.barrouh" />
      	<property name="mailFromUserPassword" value="test" />
      	<property name="dataPath" value="data/" />
+     	<property name="emailTemplatePath" value="email/" />
 	</bean>
 	
 	<bean id="personDao" class="com.barrouh.dao.PersonDao">

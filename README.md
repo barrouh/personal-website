@@ -8,7 +8,7 @@ License:
 
 Build:
 
-![Java CI](https://github.com/barrouh/parent-pom/workflows/Java%20CI/badge.svg)
+![Java CI](https://github.com/barrouh/personal-website/workflows/Java%20CI/badge.svg)
 
 Metrics:
 

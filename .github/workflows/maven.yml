@@ -17,4 +17,4 @@ jobs:
     - name: Build with Maven
       run: mvn -Psonar clean deploy -e --file pom.xml --settings /home/runner/work/personal-website/maven-settings/settings.xml
       env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

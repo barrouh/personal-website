@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <!-- ================================ -->
 <!-- Log4j2 Configuration -->
 <!-- ================================ -->
@@ -8,7 +9,7 @@
 			<PatternLayout pattern="%d %p %t: %c{1}: %m%n" />
 		</Console> 
 		
-	    <RollingFile name="FILE" fileName="/opt/logs/BarrouhWebsite_Logs/BarrouhWebsite.log" filePattern="/opt/logs/BarrouhWebsite_Logs/BarrouhWebsite-%d{yyyy-MM-dd}.log" >
+	    <RollingFile name="FILE" fileName="${catalina.home}/logs/BR.log" filePattern="${catalina.home}/logs/BR-%d{yyyy-MM-dd}.log" >
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 			<Policies>
 			<TimeBasedTriggeringPolicy />

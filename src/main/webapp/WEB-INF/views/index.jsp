@@ -11,7 +11,7 @@
     <meta name="description" content="Php  javascript MySql MsSql Asp Html Css Html5 Css3">
     <meta name="author" content="Mohamed Barrouh">
     <title>${persone.firstName} ${persone.lastName}</title>
-    <spring:url value="/resources/img/ico.png" var="iconImg" />
+    <spring:url value="/resources/img/java.png" var="iconImg" />
     <link rel="icon" href="${iconImg}">
     <spring:url value="/resources/css/main.css" var="coreCss" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
@@ -86,6 +86,7 @@
                                 <li><a class="page-scroll" href="#Skills">Skills</a></li>
                                 <li><a class="page-scroll" href="#about">About</a></li>
                                 <li><a class="page-scroll" href="#contact">Contact</a></li>
+                                <li><a class="page-scroll" href="http://blog.barrouh.com">Blog</a></li>
                             </ul>
                         </div>
                     </div>

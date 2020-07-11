@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barrouh.domain.Person;
 import com.barrouh.domain.Settings;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PersonDao {
 

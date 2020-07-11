@@ -18,9 +18,15 @@
 },
 {
    "title":"First Job",
-   "date":"08-2017",
+   "date":"08-2017 - 03-2020",
    "image":"everis.png",
    "discription":"Start working on Everis as Full Stack Java Developer on EPO project."
+},
+{
+   "title":"New Adventure",
+   "date":"03-2020",
+   "image":"grupoavalon.png",
+   "discription":"Senior Java/J2EE Enginee."
 },
 {
    "title":"",

@@ -143,7 +143,8 @@
                                             <c:when test="${ not empty story.date}">
                                                 <li class="${cssClass}">
                                                     <div class="timeline-image">
-                                                        <img class="img-circle img-responsive" src="/resources/img/${story.image}" alt="${story.title}">
+	                                                    <spring:url value="/resources/img/${story.image}" var="Img" />
+	                                                    <img class="img-circle img-responsive" src="${Img}" alt="${story.title}">
                                                     </div>
                                                     <div class="timeline-panel righttext">
                                                         <div class="timeline-heading">

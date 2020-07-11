@@ -9,7 +9,7 @@
 			<PatternLayout pattern="%d %p %t: %c{1}: %m%n" />
 		</Console> 
 		
-	    <RollingFile name="FILE" fileName="${catalina.home}/logs/BR.log" filePattern="${catalina.home}/logs/BR-%d{yyyy-MM-dd}.log" >
+	    <RollingFile name="FILE" fileName="/opt/tomcat/logs/BR.log" filePattern="/opt/tomcat/logs/BR-%d{yyyy-MM-dd}.log" >
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 			<Policies>
 			<TimeBasedTriggeringPolicy />
@@ -18,11 +18,11 @@
 	</Appenders>
 	<Loggers>
 		<logger name="org.springframework">
-			<level value="DEBUG" />
+			<level value="INFO" />
 			<appender-ref ref="FILE" />
 		</logger>
 
-		<root level="DEBUG">
+		<root level="INFO">
 			<AppenderRef ref="FILE" />
 			<AppenderRef ref="CONSOLE" />
 		</root>

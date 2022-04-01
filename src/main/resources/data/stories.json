@@ -1,0 +1,36 @@
+[{
+   "title":"Birth",
+   "date":"08-1995",
+   "image":"logo.jpg",
+   "discription":"I was born in one of the villages on the outskirts of Chaouen Morocco on 12-08-1995."
+},
+{
+   "title":"Graduation from high school",
+   "date":"06-2014",
+   "image":"ico.png",
+   "discription":"I graduated from high school with a diploma in the natural sciences."
+},
+{
+   "title":"beginning study programming",
+   "date":"09-2014",
+   "image":"prog.png",
+   "discription":"Began studying programming in a specialist institute of offshoring jobs."
+},
+{
+   "title":"First Job",
+   "date":"08-2017 - 03-2020",
+   "image":"everis.png",
+   "discription":"Start working on Everis as Full Stack Java Developer on EPO project."
+},
+{
+   "title":"New Adventure",
+   "date":"03-2020",
+   "image":"grupoavalon.png",
+   "discription":"Senior Java/J2EE Enginee."
+},
+{
+   "title":"",
+   "date":"",
+   "image":"",
+   "discription":"<a class='page-scroll' href='#contact'>Be Part<br>Of My<br>Story!</a>"
+}]

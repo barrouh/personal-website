@@ -1,17 +1,3 @@
-$('#contactForm').on('change', '[name=fullName]', function() {
-	var fullName = $("[name=fullName]").val();
-	var nameParams = fullName.split(" ");
-	fullName = "";
-	for (var i = 0; i < nameParams.length; i++) {
-		if (nameParams[i] != "") {
-			fullName += nameParams[i].substring(0, 1).toUpperCase() +
-				nameParams[i].substring(1, nameParams[i].length) + " ";
-		}
-	}
-	fullName = fullName.substring(0, fullName.length - 1);
-	$("[name=fullName]").val(fullName);
-});
-
 $("#contactForm").submit(function(event) {
 	//prevent default submit behavior
 	event.preventDefault();
@@ -88,7 +74,7 @@ function isNotnull(param) {
 }
 
 function isValidEmailAddress(email) {
-	var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+	var pattern = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 	return pattern.test(email);
 }
 

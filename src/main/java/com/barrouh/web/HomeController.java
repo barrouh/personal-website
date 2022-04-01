@@ -29,7 +29,7 @@ public class HomeController {
 
 	@GetMapping("/")
 	public ModelAndView homePage(HttpServletRequest request) {
-		LOGGER.info("Receiving request from client with ip address : " + Tools.getClientIpAddr(request));
+		LOGGER.info("Receiving request from client with ip address : {}",Tools.getClientIpAddr(request));
 		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
 		model.addObject("persone", personeService.getPerson());
@@ -48,8 +48,8 @@ public class HomeController {
 		contact.setPhoneNumber(phoneNumber);
 		contact.setMessage(message);
 		if (isValidContact(contact)) {
-			LOGGER.info("The user " + fullName + " Triying to Contact you.");
-			LOGGER.info("The user email is : " + email + " and user phone number is : " + phoneNumber);
+			LOGGER.info("The user {} triying to contact you.",fullName);
+			LOGGER.info("The user email is: {} and user phone number is: {} ", email, phoneNumber);
 			try {
 				mailService.sendMail(contact);
 				return "success";
@@ -58,7 +58,7 @@ public class HomeController {
 				return "error";
 			}
 		} else {
-			LOGGER.error("Some informations are missing in Contact form.");
+			LOGGER.error("Some informations are missing in contact form.");
 			return "error";
 		}
 	}

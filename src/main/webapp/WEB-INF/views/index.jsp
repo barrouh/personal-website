@@ -27,8 +27,8 @@
     <link href="${fontawesomeCss}" rel="stylesheet">
     <link href="${starjediCss}" rel="stylesheet" />
     <!-- Custom jS -->
-    <spring:url value="/resources/js/jquery.js" var="jqueryJs" />
-    <spring:url value="/resources/js/circle-progress.js" var="circleprogressJs" />
+    <spring:url value="/resources/js/jquery.min.js" var="jqueryJs" />
+    <spring:url value="/resources/js/circle-progress.min.js" var="circleprogressJs" />
     <script src="${jqueryJs}"></script>
     <script src="${circleprogressJs}"></script>
     <!-- Custom Fonts -->
@@ -271,7 +271,7 @@
                                 <div class="copy text-center">
                                     <p class="link">
                                         <span>Made With 
-                                                    <span class="heart-beat"><em class='fa fa-heart'></em> </span> in Morocco © By ${persone.firstName} ${persone.lastName}</span>
+                                                    <span class="heart-beat"><em class='fa fa-heart'></em> </span> in Morocco ï¿½ By ${persone.firstName} ${persone.lastName}</span>
                                     </p>
                                 </div>
                             </div>
@@ -292,8 +292,8 @@
         <spring:url value="/resources/js/jquery.easing.min.js" var="easingJs" />
         <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
         <spring:url value="/resources/js/classie.js" var="classieJs" />
-        <spring:url value="/resources/js/cbpAnimatedHeader.min.js" var="cbpAnimatedHeaderJs" />
-        <spring:url value="/resources/js/contactMe.js" var="contactMeJs" />
+        <spring:url value="/resources/js/cbp-animated-header.min.js" var="cbpAnimatedHeaderJs" />
+        <spring:url value="/resources/js/contact-me.js" var="contactMeJs" />
         <spring:url value="/resources/js/main.js" var="mainJs" />
         <script src="${easingJs}"></script>
         <script src="${bootstrapJs}"></script>

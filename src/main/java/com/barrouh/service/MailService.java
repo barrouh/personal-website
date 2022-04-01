@@ -1,8 +1,8 @@
 package com.barrouh.service;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.text.MessageFormat;
 import java.util.Properties;
 
@@ -32,15 +32,15 @@ public class MailService {
 
 	private String port;
 
+	private String user;
+
+	private String password;
+
 	private MimeMessage emailMessage;
 
 	private Properties emailProperties;
 
 	private String to;
-
-	private String fromUser;
-
-	private String fromUserPassword;
 
 	private String emailTemplatePath;
 
@@ -48,11 +48,11 @@ public class MailService {
 
 	public MailService(Settings settings) {
 		if (settings.isMailSettingsValid()) {
-			this.host = settings.getMailHost();
-			this.port = settings.getMailPort();
+			this.host = settings.getSmtpHost();
+			this.port = settings.getSmtpPort();
+			this.user = settings.getSmtpUser();
+			this.password = settings.getSmtpPassword();
 			this.to = settings.getMailTo();
-			this.fromUser = settings.getMailFromUser();
-			this.fromUserPassword = settings.getMailFromUserPassword();
 			this.emailTemplatePath = settings.getEmailTemplatePath();
 		} else {
 			LOGGER.error("MailService Settings is null or not valid .");
@@ -77,14 +77,14 @@ public class MailService {
 			mailSession = Session.getInstance(emailProperties, new javax.mail.Authenticator() {
 				@Override
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(fromUser, fromUserPassword);
+					return new PasswordAuthentication(user, password);
 				}
 			});
 
 			emailMessage = new MimeMessage(mailSession);
 			emailMessage.setFrom(new InternetAddress(contact.getEmail()));
-			emailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(contact.getEmail()));
-			emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(contact.getEmail()));
+			emailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(to));
 			emailMessage.setSubject("New Email received from : " + contact.getFullName());
 
 			MimeMultipart multipart = new MimeMultipart("related");
@@ -118,8 +118,8 @@ public class MailService {
 
 	private String buildEmail(Object[] values) throws IOException {
 		String result = "";
-		String msg = new String(Files.readAllBytes(Paths.get(emailTemplatePath + "email.html")));
-
+		File file = new File(emailTemplatePath);
+		String msg = new String(Files.readAllBytes(file.toPath()));
 		if (values != null && values.length > 0) {
 			result = MessageFormat.format(msg, values);
 		} else if (values == null) {

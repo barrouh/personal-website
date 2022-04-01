@@ -10,15 +10,17 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 	<context:component-scan base-package="com.barrouh" />
+	
+	<context:property-placeholder location="classpath:application.properties" />
 
 	<bean id="settings" class="com.barrouh.domain.Settings">
-		<property name="mailHost" value="smtp.gmail.com" />
-		<property name="mailPort" value="465" />
-		<property name="mailTo" value="mohamed.barrouh@gmail.com" />
-		<property name="mailFromUser" value="smtp.barrouh" />
-		<property name="mailFromUserPassword" value="test" />
-		<property name="dataPath" value="data/" />
-		<property name="emailTemplatePath" value="email/" />
+		<property name="smtpHost" value="${smtp.host}" />
+		<property name="smtpPort" value="${smtp.port}" />
+		<property name="smtpUser" value="${smtp.user}" />
+		<property name="smtpPassword" value="${smtp.password}" />
+		<property name="mailTo" value="${mail.to}" />
+		<property name="emailTemplatePath" value="${mail.template.path}" />
+		<property name="dataPath" value="${data.path}" />
 	</bean>
 
 	<bean id="personDao" class="com.barrouh.dao.PersonDao">

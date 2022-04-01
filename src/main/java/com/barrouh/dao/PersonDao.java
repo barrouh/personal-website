@@ -19,7 +19,7 @@ public class PersonDao {
 	static final Logger LOGGER = LogManager.getLogger(PersonDao.class);
 
 	public PersonDao(Settings settings) {
-		this.dataPath = settings.getDataPath() + "Persone.json";
+		this.dataPath = settings.getDataPath() + "persone.json";
 	}
 
 	public Person getPersone() {

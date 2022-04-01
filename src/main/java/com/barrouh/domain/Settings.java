@@ -4,34 +4,50 @@ import com.barrouh.web.Tools;
 
 public class Settings {
 
-	private String mailHost;
+	private String smtpHost;
 
-	private String mailPort;
+	private String smtpPort;
+
+	private String smtpUser;
+
+	private String smtpPassword;
 
 	private String mailTo;
 
-	private String mailFromUser;
-
-	private String mailFromUserPassword;
+	private String emailTemplatePath;
 
 	private String dataPath;
 
-	private String emailTemplatePath;
-
-	public String getMailHost() {
-		return mailHost;
+	public String getSmtpHost() {
+		return smtpHost;
 	}
 
-	public void setMailHost(String mailHost) {
-		this.mailHost = mailHost;
+	public void setSmtpHost(String smtpHost) {
+		this.smtpHost = smtpHost;
 	}
 
-	public String getMailPort() {
-		return mailPort;
+	public String getSmtpPort() {
+		return smtpPort;
 	}
 
-	public void setMailPort(String mailPort) {
-		this.mailPort = mailPort;
+	public void setSmtpPort(String smtpPort) {
+		this.smtpPort = smtpPort;
+	}
+
+	public String getSmtpUser() {
+		return smtpUser;
+	}
+
+	public void setSmtpUser(String smtpUser) {
+		this.smtpUser = smtpUser;
+	}
+
+	public String getSmtpPassword() {
+		return smtpPassword;
+	}
+
+	public void setSmtpPassword(String smtpPassword) {
+		this.smtpPassword = smtpPassword;
 	}
 
 	public String getMailTo() {
@@ -42,42 +58,24 @@ public class Settings {
 		this.mailTo = mailTo;
 	}
 
-	public String getMailFromUser() {
-		return mailFromUser;
-	}
-
-	public void setMailFromUser(String mailFromUser) {
-		this.mailFromUser = mailFromUser;
-	}
-
-	public String getMailFromUserPassword() {
-		return mailFromUserPassword;
-	}
-
-	public void setMailFromUserPassword(String mailFromUserPassword) {
-		this.mailFromUserPassword = mailFromUserPassword;
-	}
-
-	public String getDataPath() {
-		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath() + dataPath;
-	}
-
-	public void setDataPath(String dataPath) {
-		this.dataPath = dataPath;
-	}
-
 	public String getEmailTemplatePath() {
-		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath() + emailTemplatePath;
+		return emailTemplatePath;
 	}
 
 	public void setEmailTemplatePath(String emailTemplatePath) {
 		this.emailTemplatePath = emailTemplatePath;
 	}
 
+	public String getDataPath() {
+		return dataPath;
+	}
+
+	public void setDataPath(String dataPath) {
+		this.dataPath = dataPath;
+	}
+
 	public boolean isMailSettingsValid() {
-		boolean isValid = false;
-		isValid = Tools.isNotnull(this.mailHost) && Tools.isNotnull(this.mailPort) && Tools.isNotnull(this.mailTo)
-				&& Tools.isNotnull(this.mailFromUser) && Tools.isNotnull(this.mailFromUserPassword);
-		return isValid;
+		return Tools.isNotnull(this.smtpHost) && Tools.isNotnull(this.smtpPort) && Tools.isNotnull(this.mailTo)
+				&& Tools.isNotnull(this.smtpUser) && Tools.isNotnull(this.smtpPassword);
 	}
 }

@@ -21,7 +21,7 @@ public class StoryDao {
 	static final Logger LOGGER = LogManager.getLogger(StoryDao.class);
 
 	public StoryDao(Settings settings) {
-		this.dataPath = settings.getDataPath() + "Stories.json";
+		this.dataPath = settings.getDataPath() + "stories.json";
 	}
 
 	public List<Story> getStories() {

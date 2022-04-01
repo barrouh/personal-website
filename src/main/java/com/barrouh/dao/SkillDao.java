@@ -22,7 +22,7 @@ public class SkillDao {
 	static final Logger LOGGER = LogManager.getLogger(SkillDao.class);
 
 	public SkillDao(Settings settings) {
-		this.dataPath = settings.getDataPath() + "Skills.json";
+		this.dataPath = settings.getDataPath() + "skills.json";
 	}
 
 	public List<Skill> getSkills() {

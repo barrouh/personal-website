@@ -270,8 +270,7 @@
                             <div class="footer">
                                 <div class="copy text-center">
                                     <p class="link">
-                                        <span>Made With 
-                                                    <span class="heart-beat"><em class='fa fa-heart'></em> </span> in Morocco � By ${persone.firstName} ${persone.lastName}</span>
+                                        <span>Made With<span class="heart-beat"><em class='fa fa-heart'></em></span>in Morocco By ${persone.firstName} ${persone.lastName} &copy; 2016</span>
                                     </p>
                                 </div>
                             </div>

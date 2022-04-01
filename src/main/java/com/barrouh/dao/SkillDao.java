@@ -20,18 +20,18 @@ public class SkillDao {
 	private String dataPath;
 
 	static final Logger LOGGER = LogManager.getLogger(SkillDao.class);
-	
+
 	public SkillDao(Settings settings) {
-		this.dataPath = settings.getDataPath()+"Skills.json";
+		this.dataPath = settings.getDataPath() + "Skills.json";
 	}
 
 	public List<Skill> getSkills() {
 		List<Skill> skills = new ArrayList<>();
 		try {
-			LOGGER.info("Trying to get Skills Data ...");
+			LOGGER.info("Trying to get skills data ...");
 			skills = mapper.readValue(new File(dataPath), new TypeReference<List<Skill>>() {
 			});
-			LOGGER.info("Skills Data Retrived successfully.");
+			LOGGER.info("Skills data retrived successfully.");
 		} catch (IOException e) {
 			LOGGER.error(e.getMessage(), e);
 		}

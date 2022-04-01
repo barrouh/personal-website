@@ -3,29 +3,29 @@ package com.barrouh.domain;
 import java.util.List;
 
 public class Person {
-	
+
 	private String firstName;
-	
+
 	private String lastName;
-	
+
 	private String phoneNumber;
-	
+
 	private String email;
-	
+
 	private String image;
-	
+
 	private String welcomeQuote;
-	
+
 	private String facebookLink;
-	
+
 	private String githubLink;
-	
+
 	private String linkedinLink;
-	
+
 	private String instagramLink;
-	
+
 	private List<Skill> skills;
-	
+
 	private List<Story> stories;
 
 	public String getFirstName() {
@@ -63,7 +63,7 @@ public class Person {
 	public String getImage() {
 		return image;
 	}
-	
+
 	public void setImage(String image) {
 		this.image = image;
 	}
@@ -123,5 +123,5 @@ public class Person {
 	public void setStories(List<Story> stories) {
 		this.stories = stories;
 	}
-	
+
 }

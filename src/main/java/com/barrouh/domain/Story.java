@@ -3,11 +3,11 @@ package com.barrouh.domain;
 public class Story {
 
 	private String title;
-	
+
 	private String date;
-	
+
 	private String image;
-	
+
 	private String discription;
 
 	public String getTitle() {
@@ -25,7 +25,7 @@ public class Story {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
+
 	public String getImage() {
 		return image;
 	}
@@ -41,5 +41,5 @@ public class Story {
 	public void setDiscription(String discription) {
 		this.discription = discription;
 	}
-	
+
 }

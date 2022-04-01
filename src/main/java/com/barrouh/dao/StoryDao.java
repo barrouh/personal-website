@@ -14,22 +14,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class StoryDao {
 
-    private final ObjectMapper mapper = new ObjectMapper();
-	
+	private final ObjectMapper mapper = new ObjectMapper();
+
 	private String dataPath;
-	
+
 	static final Logger LOGGER = LogManager.getLogger(StoryDao.class);
-	
+
 	public StoryDao(Settings settings) {
-		this.dataPath = settings.getDataPath()+"Stories.json";
+		this.dataPath = settings.getDataPath() + "Stories.json";
 	}
-	
+
 	public List<Story> getStories() {
-		List<Story> stories=new ArrayList<>();
+		List<Story> stories = new ArrayList<>();
 		try {
-			LOGGER.info("Trying to get Stories Data ...");
-			stories = mapper.readValue(new File(dataPath), new TypeReference<List<Story>>(){});
-			LOGGER.info("Stories Data Retrived successfully.");
+			LOGGER.info("Trying to get stories data ...");
+			stories = mapper.readValue(new File(dataPath), new TypeReference<List<Story>>() {
+			});
+			LOGGER.info("Stories data retrived successfully.");
 		} catch (IOException e) {
 			LOGGER.error(e.getMessage(), e);
 		}

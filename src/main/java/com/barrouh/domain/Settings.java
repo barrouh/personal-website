@@ -15,7 +15,7 @@ public class Settings {
 	private String mailFromUserPassword;
 
 	private String dataPath;
-	
+
 	private String emailTemplatePath;
 
 	public String getMailHost() {
@@ -59,15 +59,15 @@ public class Settings {
 	}
 
 	public String getDataPath() {
-		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath()+dataPath;
+		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath() + dataPath;
 	}
 
 	public void setDataPath(String dataPath) {
 		this.dataPath = dataPath;
 	}
-	
+
 	public String getEmailTemplatePath() {
-		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath()+emailTemplatePath;
+		return Settings.class.getProtectionDomain().getCodeSource().getLocation().getPath() + emailTemplatePath;
 	}
 
 	public void setEmailTemplatePath(String emailTemplatePath) {

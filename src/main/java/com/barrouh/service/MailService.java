@@ -31,7 +31,7 @@ public class MailService {
 	private String host;
 
 	private String port;
-	
+
 	private MimeMessage emailMessage;
 
 	private Properties emailProperties;
@@ -41,19 +41,19 @@ public class MailService {
 	private String fromUser;
 
 	private String fromUserPassword;
-	
+
 	private String emailTemplatePath;
-	
+
 	static final Logger LOGGER = LogManager.getLogger(MailService.class);
 
 	public MailService(Settings settings) {
 		if (settings.isMailSettingsValid()) {
-		    this.host = settings.getMailHost();
+			this.host = settings.getMailHost();
 			this.port = settings.getMailPort();
 			this.to = settings.getMailTo();
 			this.fromUser = settings.getMailFromUser();
-			this.fromUserPassword = settings.getMailFromUserPassword(); 
-			this.emailTemplatePath=settings.getEmailTemplatePath();
+			this.fromUserPassword = settings.getMailFromUserPassword();
+			this.emailTemplatePath = settings.getEmailTemplatePath();
 		} else {
 			LOGGER.error("MailService Settings is null or not valid .");
 			throw new NullPointerException();
@@ -66,7 +66,7 @@ public class MailService {
 		emailProperties.setProperty("mail.smtp.port", port);
 		emailProperties.setProperty("mail.smtp.auth", "true");
 		emailProperties.setProperty("mail.smtp.socketFactory.port", port);
-		emailProperties.setProperty("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+		emailProperties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		emailProperties.setProperty("mail.smtp.starttls.enable", "false");
 	}
 
@@ -85,29 +85,19 @@ public class MailService {
 			emailMessage.setFrom(new InternetAddress(contact.getEmail()));
 			emailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(contact.getEmail()));
 			emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-			emailMessage.setSubject("New Email received from : "+contact.getFullName());
-			
-	         MimeMultipart multipart = new MimeMultipart("related");
-			 String[] args = {contact.getFullName(),contact.getMessage()};
-	         BodyPart messageBodyPart = new MimeBodyPart();
-	         messageBodyPart.setContent(buildEmail(args), "text/html");
-	         multipart.addBodyPart(messageBodyPart);
+			emailMessage.setSubject("New Email received from : " + contact.getFullName());
 
-	        /*
-	         messageBodyPart = new MimeBodyPart();
-	         DataSource fds = new FileDataSource(emailTemplatePath+"github.png");
+			MimeMultipart multipart = new MimeMultipart("related");
+			String[] args = { contact.getFullName(), contact.getMessage() };
+			BodyPart messageBodyPart = new MimeBodyPart();
+			messageBodyPart.setContent(buildEmail(args), "text/html");
+			multipart.addBodyPart(messageBodyPart);
 
-	         messageBodyPart.setDataHandler(new DataHandler(fds));
-	         messageBodyPart.setHeader("Content-ID", "<github>");
-	   
-	         multipart.addBodyPart(messageBodyPart);
-	         */
-	         
-	         emailMessage.setContent(multipart);
-	        
+			emailMessage.setContent(multipart);
+
 		} catch (MessagingException | IOException e) {
 			LOGGER.error(e.getMessage(), e);
-		} 
+		}
 	}
 
 	public void sendMail(Contact contact) throws MailException {
@@ -125,10 +115,10 @@ public class MailService {
 			LOGGER.warn("Contact object is null !!!");
 		}
 	}
-	
+
 	private String buildEmail(Object[] values) throws IOException {
 		String result = "";
-	    String msg = new String(Files.readAllBytes(Paths.get(emailTemplatePath+"Email.html")));
+		String msg = new String(Files.readAllBytes(Paths.get(emailTemplatePath + "email.html")));
 
 		if (values != null && values.length > 0) {
 			result = MessageFormat.format(msg, values);

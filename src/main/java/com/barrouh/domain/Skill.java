@@ -1,11 +1,11 @@
 package com.barrouh.domain;
 
 public class Skill {
-	
+
 	private String name;
-	
+
 	private String color;
-	
+
 	private String progress;
 
 	public String getName() {

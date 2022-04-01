@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
-<!-- ================================ -->
-<!-- Log4j2 Configuration -->
-<!-- ================================ -->
 <Configuration>
 	<Appenders>
 		<Console name="CONSOLE" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d %p %t: %c{1}: %m%n" />
 		</Console> 
-		
-	    <RollingFile name="FILE" fileName="/opt/tomcat/logs/BR.log" filePattern="/opt/tomcat/logs/BR-%d{yyyy-MM-dd}.log" >
+	    <RollingFile name="FILE" fileName="/opt/tomcat/logs/barrouh.log" filePattern="/opt/tomcat/logs/barrouh-%d{yyyy-MM-dd}.log" >
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 			<Policies>
 			<TimeBasedTriggeringPolicy />
@@ -21,7 +17,6 @@
 			<level value="INFO" />
 			<appender-ref ref="FILE" />
 		</logger>
-
 		<root level="INFO">
 			<AppenderRef ref="FILE" />
 			<AppenderRef ref="CONSOLE" />

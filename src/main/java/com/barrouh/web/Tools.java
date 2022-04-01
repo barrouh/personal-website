@@ -3,8 +3,9 @@ package com.barrouh.web;
 import javax.servlet.http.HttpServletRequest;
 
 public class Tools {
-	
-	private Tools() {}
+
+	private Tools() {
+	}
 
 	private static final String[] IP_HEADER_CANDIDATES = { "X-Forwarded-For", "Proxy-Client-IP", "WL-Proxy-Client-IP",
 			"HTTP_X_FORWARDED_FOR", "HTTP_X_FORWARDED", "HTTP_X_CLUSTER_CLIENT_IP", "HTTP_CLIENT_IP",
@@ -19,11 +20,11 @@ public class Tools {
 		}
 		return request.getRemoteAddr();
 	}
-	
+
 	public static boolean isNotnull(String param) {
-		if(param != null) {
-			return !param.replaceAll("\\s+","").equals("");
-		}else {
+		if (param != null) {
+			return !param.replaceAll("\\s+", "").equals("");
+		} else {
 			return false;
 		}
 	}

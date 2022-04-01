@@ -14,30 +14,30 @@ import com.barrouh.domain.Skill;
 import com.barrouh.domain.Story;
 
 public class PersoneService {
-	
+
 	@Autowired
 	private PersonDao personDao;
-	
+
 	@Autowired
 	private SkillDao skillDao;
-	
+
 	@Autowired
 	private StoryDao storyDao;
-	
+
 	static final Logger LOGGER = LogManager.getLogger(PersoneService.class);
-	
+
 	public Person getPerson() {
 		Person person;
-	    List<Skill> skills;
+		List<Skill> skills;
 		List<Story> stories;
 		try {
-			person=personDao.getPersone();
-			skills=skillDao.getSkills();
-			stories=storyDao.getStories();
+			person = personDao.getPersone();
+			skills = skillDao.getSkills();
+			stories = storyDao.getStories();
 			person.setSkills(skills);
 			person.setStories(stories);
 			return person;
-		}catch (Exception e) {
+		} catch (Exception e) {
 			LOGGER.error(e.getMessage(), e);
 			return null;
 		}

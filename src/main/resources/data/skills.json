@@ -4,9 +4,29 @@
    "progress":"0.90"
 },
 {
-   "name":"Spring Framework",
+   "name":"Spring",
    "color":"#76bd1d",
    "progress":"0.85"
+},
+{
+   "name":"Azure",
+   "color":"#003bc9",
+   "progress":"0.50"
+},
+{
+   "name":"IoT",
+   "color":"#b0a9a9",
+   "progress":"0.60"
+},
+{
+   "name":"AWS",
+   "color":"#F57F17",
+   "progress":"0.30"
+},
+{
+   "name":"Docker",
+   "color":"#003bc9",
+   "progress":"0.60"
 },
 {
    "name":"Hibernate",

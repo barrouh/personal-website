@@ -17,7 +17,7 @@
    "discription":"Began studying programming in a specialist institute of offshoring jobs."
 },
 {
-   "title":"First Job",
+   "title":"Everis",
    "date":"08-2017 - 03-2020",
    "image":"everis.jpg",
    "discription":"Started working with Everis as Java Developer on the EPO project."
@@ -29,8 +29,8 @@
    "discription":"Completed my bachelor's degree in National School of Applied Sciences of Tangier."
 },
 {
-   "title":"New Adventure",
-   "date":"03-2020 - Present",
+   "title":"Grupo Avalon",
+   "date":"03-2020 - 12-2022",
    "image":"grupoavalon.png",
    "discription":"Started working with Grupo Avalon as a Senior Java/J2EE Engineer."
 },
@@ -39,6 +39,12 @@
    "date":"2019 - 2021",
    "image":"ensa-tetouan.jpg",
    "discription":"Completed my master's degree in National School of Applied Sciences of Tetouan."
+},
+{
+   "title":"NTT Data Morocco",
+   "date":"12-2022 - Present",
+   "image":"nttdata.png",
+   "discription":"Started working with NTT Data Morocco as a Senior Java/J2EE Engineer."
 },
 {
    "title":"",

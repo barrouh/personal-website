@@ -7,17 +7,14 @@
 
 .heart-beat {
   background-color: transparent;
-  width: 12px;
-  height: 20px;
   display: inline-block;
-  margin-right: 10px;
   -webkit-animation: heartbeat .5s infinite linear;
   -moz-animation: heartbeat .5s infinite linear;
   animation: heartbeat .5s infinite linear;
 }
 .heart-beat em{
 	 color: red;
-	 font-size:22px;
+	 font-size:18px;
 }
 
 @-webkit-keyframes heartbeat {
@@ -632,7 +629,7 @@ ul.topnav li.icon {
 .footer{
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     width:100%;
-    margin-top: -40px;
+    margin-top: 0px;
 }
 
 @media screen and (max-width:680px) {
@@ -646,8 +643,8 @@ ul.topnav li.icon {
     margin: 0 auto;
     width: 70%;
     height: 3px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 0px;
 }
 
 @media screen and (max-width:680px) {

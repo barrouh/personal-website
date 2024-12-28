@@ -80,43 +80,14 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="hidden">
-                                    <a href="#page-top"></a>
-                                </li>
-                                <li><a class="page-scroll" href="#Skills">Skills</a></li>
+                                <li class="hidden"><a href="#page-top"></a></li>
                                 <li><a class="page-scroll" href="#about">About</a></li>
+                                <li><a class="page-scroll" href="#Skills">Skills</a></li>
                                 <li><a class="page-scroll" href="#contact">Contact</a></li>
-                                <li><a class="page-scroll" href="http://blog.barrouh.com">Blog</a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <div class="WhiteLine"></div>
-                <!-- Skills Section -->
-                <section id="Skills">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <h2 class="section-heading">Skills</h2>
-                            </div>
-                        </div>
-                        <c:forEach items="${persone.skills}" var="skill">
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <div class="portfolio-caption">
-                                    <h4>${skill.name}: ${skill.progress * 100}%</h4>
-                                    <div id="${fn:replace(skill.name,' ','')}Id"></div>
-                                    <script>
-                                      $('#${fn:replace(skill.name,' ','')}Id').circleProgress({
-                                         value: '${skill.progress}',
-                                         size: 150,
-                                         fill: {color: "${skill.color}"}
-                                       });
-                                    </script>
-                                </div>
-                            </div>
-                        </c:forEach>
-                    </div>
-                </section>
                 <div class="WhiteLine"></div>
                 <!-- About Section -->
                 <section id="about">
@@ -172,6 +143,32 @@
                     </div>
                 </section>
                 <div class="WhiteLine"></div>
+                <!-- Skills Section -->
+                <section id="Skills">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h2 class="section-heading">Skills</h2>
+                            </div>
+                        </div>
+                        <c:forEach items="${persone.skills}" var="skill">
+                            <div class="col-md-4 col-sm-6 portfolio-item">
+                                <div class="portfolio-caption">
+                                    <h4>${skill.name}: ${skill.progress * 100}%</h4>
+                                    <div id="${fn:replace(skill.name,' ','')}Id"></div>
+                                    <script>
+                                      $('#${fn:replace(skill.name,' ','')}Id').circleProgress({
+                                         value: '${skill.progress}',
+                                         size: 150,
+                                         fill: {color: "${skill.color}"}
+                                       });
+                                    </script>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </section>
+                <div class="WhiteLine"></div>
                 <!-- Contact Section -->
                 <section id="contact">
                     <div class="container">
@@ -183,50 +180,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-md-8">
-                                        <form id="contactForm" method="post" autocomplete="off">
-                                            <div class="form-group">
-                                                <div class="col-md-12 inputGroupContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><em class="glyphicon glyphicon-user"></em></span>
-                                                        <input type="text" class="form-control" placeholder="Your Name" name="fullName" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 inputGroupContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><em class="glyphicon glyphicon-envelope"></em></span>
-                                                        <input type="text" class="form-control" placeholder="Your Email" name="email" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 inputGroupContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><em class="glyphicon glyphicon-earphone"></em></span>
-                                                        <input type="tel" class="form-control" placeholder="Your Phone" name="phoneNumber" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-md-12 inputGroupContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><em class="glyphicon glyphicon-pencil"></em></span>
-                                                        <textarea class="form-control" placeholder="Your Message" name="message"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <div id="success"></div>
-                                            <div class="form-group">
-                                                <label class="col-md-4 control-label"></label>
-                                                <div class="col-md-4">
-                                                    <button type="submit" class="formButton bouncy">Send <span class="glyphicon glyphicon-send"></span></button>
-                                                    <button type="reset" class="formButton bouncy" style="animation-delay:0.07s">Reset <span class="glyphicon glyphicon-remove"></span></button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                    <div class="col-md-4">
                                     </div>
                                     <div class="col-md-4">
                                         <h4 class="contact-heading">Find Me on Social Media</h4>
@@ -255,7 +209,9 @@
                                         <h4 class="contact-heading">Phone Number</h4>
                                         <p class="emailAndPhone">${persone.phoneNumber}</p>
                                         <h4 class="contact-heading">Email</h4>
-                                        <p class="emailAndPhone">${persone.email}</p>
+                                        <a class="linkedin" target="_blank" href="mailto:${persone.email}">${persone.email}</a>
+                                    </div>
+                                    <div class="col-md-4">
                                     </div>
                                 </div>
                             </div>
@@ -292,13 +248,11 @@
         <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
         <spring:url value="/resources/js/classie.js" var="classieJs" />
         <spring:url value="/resources/js/cbp-animated-header.min.js" var="cbpAnimatedHeaderJs" />
-        <spring:url value="/resources/js/contact-me.js" var="contactMeJs" />
         <spring:url value="/resources/js/main.js" var="mainJs" />
         <script src="${easingJs}"></script>
         <script src="${bootstrapJs}"></script>
         <script src="${classieJs}"></script>
         <script src="${cbpAnimatedHeaderJs}"></script>
-        <script src="${contactMeJs}"></script>
         <script src="${mainJs}"></script>
     </body>
 </html>

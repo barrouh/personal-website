@@ -14,12 +14,7 @@
 	<context:property-placeholder location="classpath:application.properties" />
 
 	<bean id="settings" class="com.barrouh.domain.Settings">
-		<property name="smtpHost" value="${smtp.host}" />
-		<property name="smtpPort" value="${smtp.port}" />
-		<property name="smtpUser" value="${smtp.user}" />
-		<property name="smtpPassword" value="${smtp.password}" />
 		<property name="mailTo" value="${mail.to}" />
-		<property name="emailTemplatePath" value="${mail.template.path}" />
 		<property name="dataPath" value="${data.path}" />
 	</bean>
 
@@ -45,12 +40,6 @@
 		<property name="personDao" ref="personDao" />
 		<property name="skillDao" ref="skillDao" />
 		<property name="storyDao" ref="storyDao" />
-	</bean>
-
-	<bean id="mailService" class="com.barrouh.service.MailService">
-		<constructor-arg>
-			<ref bean="settings" />
-		</constructor-arg>
 	</bean>
 
 	<bean
